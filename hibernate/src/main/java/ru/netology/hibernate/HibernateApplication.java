@@ -27,28 +27,28 @@ public class HibernateApplication implements CommandLineRunner {
                 .surname("Tolstoy")
                 .age(67)
                 .phone_number("none")
-                .city_of_living("Yasnaya Polyana")
+                .cityOfLiving("Yasnaya Polyana")
                 .build());
         persons.add(Person.builder()
                 .name("Fyodor")
                 .surname("Dostoevsky")
                 .age(51)
                 .phone_number("8-891-444-55-66")
-                .city_of_living("Saint Petersburg")
+                .cityOfLiving("Saint Petersburg")
                 .build());
         persons.add(Person.builder()
                 .name("Michael")
                 .surname("Bulgakov")
                 .age(35)
                 .phone_number("8-495-777-88-99")
-                .city_of_living("Moscow")
+                .cityOfLiving("Moscow")
                 .build());
         persons.add(Person.builder()
                 .name("Anton")
                 .surname("Chekhov")
                 .age(26)
                 .phone_number("8-495-999-11-22")
-                .city_of_living("Moscow")
+                .cityOfLiving("Moscow")
                 .build());
         persons.forEach(entityManager::persist);
     }
