@@ -14,7 +14,11 @@ public class PersonService {
         this.repository = repository;
     }
 
-    public List<Person> getPersons(String city) {
-        return repository.getPersonsByCity(city);
+        public List<Person> saveAll(String city) {
+            return repository.saveAll();
     }
+
+//    public List<Person> getPersons(String city) {
+//        return repository.getPersonsByCity(city);
+//    }
 }

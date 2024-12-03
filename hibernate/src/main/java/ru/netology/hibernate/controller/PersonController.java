@@ -18,7 +18,7 @@ public class PersonController {
     }
 
     @GetMapping("/persons/by-city")
-    public List<Person> getPersonByCity(@RequestParam("city") String city) {
-        return service.getPersons(city);
+    public List<Person> savePersons(@RequestParam("city") String person) {
+        return service.saveAll(person);
     }
 }
