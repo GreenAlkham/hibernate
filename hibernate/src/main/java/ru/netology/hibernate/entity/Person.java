@@ -1,34 +1,35 @@
 package ru.netology.hibernate.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import lombok.*;
 
+@Getter
+@Setter
+@ToString(onlyExplicitlyIncluded=true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
+@IdClass(PersonID.class)
 public class Person {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
     @Column(nullable = false, length = 1023)
     private String name;
 
+    @Id
     @Column(nullable = false, length = 1023)
     private String surname;
 
+    @Id
     @Column(nullable = false)
     private int age;
 
     @Column(nullable = false)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(nullable = false)
-    private String city_of_living;
+    private String cityOfLiving;
 }

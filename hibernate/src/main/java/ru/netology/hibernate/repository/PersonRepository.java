@@ -16,7 +16,8 @@ public class PersonRepository {
 
     @Transactional
     public List<Person> getPersonsByCity(String city) {
-        List<Person> result = entityManager.createNativeQuery(("SELECT * FROM person WHERE person.city_of_living = :city"))
+//        List<Person> result = entityManager.createNativeQuery(("SELECT * FROM person WHERE person.city_of_living = :city"))
+        List<Person> result = entityManager.createQuery(("FROM Person WHERE cityOfLiving = :city"))
                 .setParameter("city", city)
                 .getResultList();
         return result;
